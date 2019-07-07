@@ -3,17 +3,17 @@ function $(id) {
 }
 function createAccount(){
 	var data = {
-			username: $('username').value,
-			name: $('name').value,
-            lastname: $('lastname').value,
-            password: $('password').value,
+			username: document.getElementById('username').value,
+			nombre: document.getElementById('name').value,
+            apellido: document.getElementById('lastname').value,
+            contraseña: document.getElementById('password').value,
     }; 
     console.log(data)  
     let config = {
 		method: 'POST',
 		body: JSON.stringify(data),
         };
-	fetch("./Register", config)
+	fetch("http://localhost:3000/register", config)
 		.then(function(response){
 			return response.json();
 		})
@@ -25,5 +25,11 @@ function createAccount(){
          	}
 		});
 	}
+	function empty(){
+		document.getElementById("start2").disabled = !document.getElementById("username").value.length;
+		document.getElementById("start2").disabled = !document.getElementById("name").value.length;
+		document.getElementById("start2").disabled = !document.getElementById("lastname").value.length;
+		document.getElementById("start2").disabled = !document.getElementById("password").value.length;
+	}	
 
 document.getElementById("start2").addEventListener("click", createAccount);

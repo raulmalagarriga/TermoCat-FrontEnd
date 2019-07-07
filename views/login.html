@@ -26,17 +26,17 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="addon-wrapping">@</span>
                   </div>
-                  <input id="username"type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Nombre de usuario" aria-describedby="addon-wrapping">
+                  <input id="username"type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Nombre de usuario" aria-describedby="addon-wrapping" onInput="empty()">
           </div>
           <br/>
           <div class="input-group flex-nowrap">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="addon-wrapping">*</span>
               </div>
-              <input id="password" type="password" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="addon-wrapping">
+              <input id="password" type="password" class="form-control" placeholder="Contraseña" aria-label="Contraseña" aria-describedby="addon-wrapping" onInput="empty()">
           </div>
           <br/>
-          <button id="start" type="button" class="btn btn-outline-primary">Ir</button>
+          <button id="start" type="button" class="btn btn-outline-primary" disabled="disabled">Ir</button>
           </div>
     
     <script type="text/javascript" src="login.js"></script>

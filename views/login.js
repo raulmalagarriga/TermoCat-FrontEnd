@@ -5,10 +5,10 @@ function $(id) {
 function logIn(){
     let body = {
         username: document.getElementById("username").value,
-       password: document.getElementById("password").value
+       contraseña: document.getElementById("password").value
     };
    console.log(body)
-    fetch("./Login", {method: "POST", body:JSON.stringify(body)})
+    fetch("http://localhost:3000/login", {method: "POST", body:JSON.stringify(body)})
         .then(function(resp){
             return resp.json();
         })
@@ -24,4 +24,8 @@ function logIn(){
           }
         });
  }
+ function empty(){
+    document.getElementById("start").disabled = !document.getElementById("username").value.length;
+    document.getElementById("start").disabled = !document.getElementById("password").value.length;
+}
  $("start").addEventListener("click", logIn);

@@ -21,8 +21,10 @@ function logIn(){
              window.location.href = data.redirect;
           }else if(data.message.includes("Banned") && data.status == 200){
               alert(data.message);
+              window.location.href = 'acercade.html';
           }
         });
+        
  }
  function empty(){
     document.getElementById("start").disabled = !document.getElementById("username").value.length;

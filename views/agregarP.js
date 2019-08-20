@@ -19,6 +19,9 @@ function AgregarProducto() {
 	let config = {
 		method: 'POST',
 		body: JSON.stringify(data),
+		headers:{
+			'Content-Type' : 'application/json'
+		}
 	};
 	fetch("http://localhost:3000/empresa/sucursales/1", config)
 		.then(function (response) {

@@ -18,6 +18,9 @@ function EditarEmpresa() {
 	let config = {
 		method: 'POST',
 		body: JSON.stringify(data),
+		headers:{
+			'Content-Type' : 'application/json'
+		}
 	};
 	fetch("http://localhost:3000/empresa", config)
 		.then(function (response) {

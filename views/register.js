@@ -12,6 +12,9 @@ function createAccount(){
     let config = {
 		method: 'POST',
 		body: JSON.stringify(data),
+		headers:{
+			'Content-Type' : 'application/json'
+		}
         };
 	fetch("http://localhost:3000/register", config)
 		.then(function(response){

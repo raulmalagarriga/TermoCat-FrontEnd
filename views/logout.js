@@ -4,6 +4,9 @@ document.getElementById('userDropdown').innerHTML = sessionStorage.getItem("name
 function logOut(){
     let config = {
          method: 'GET',
+         headers:{
+			'Content-Type' : 'application/json'
+		}
      };
      fetch("http://localhost:3000/Logout", config)
      .then(function(res){

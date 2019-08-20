@@ -15,6 +15,9 @@ function AgregarSucursal() {
 	let config = {
 		method: 'POST',
 		body: JSON.stringify(data),
+		headers:{
+			'Content-Type' : 'application/json'
+		}
 	};
 	fetch("http://localhost:3000/empresa/sucursales", config)
 		.then(function (response) {

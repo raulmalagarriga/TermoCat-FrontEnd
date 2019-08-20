@@ -8,7 +8,13 @@ function logIn(){
        contraseña: document.getElementById("password").value
     };
    console.log(body)
-    fetch("http://localhost:3000/login", {method: "POST", body:JSON.stringify(body)})
+    fetch("http://localhost:3000/login", {
+        method: "POST", 
+        body:JSON.stringify(body),
+        headers:{
+			'Content-Type' : 'application/json'
+		}
+    })
         .then(function(resp){
             return resp.json();
         })

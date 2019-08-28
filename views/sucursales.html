@@ -144,7 +144,7 @@
                                 <h6 class="m-0 font-weight-bold text-primary">SUCURSALES</h6>
                                 <div class="dropdown no-arrow">
                                     <button id="start3" type="button" class="btn btn-primary" onclick="location='agregarS.html'">Agregar</button>
-                                    <button id="start4" type="button" class="btn btn-primary" onclick="">Elimnar</button>
+                                    <button id="start4" type="button" class="btn btn-primary" onclick="eliminarSucursal();">Elimnar</button>
                                 </div>
                               </div>
                     <tr>
@@ -154,7 +154,7 @@
                       
                     </tr>
                     <tbody id="sucursales">
-                            <tr>
+                            <tr id="demo">
                               <td>Tiger Nixon</td>
                               <td>System Architect</td>
                               <td>12:00-24:00</td>
@@ -211,6 +211,20 @@
     <!-- Page level custom scripts -->
     <script src="startbootstrap-sb-admin-2-gh-pages/js/demo/chart-area-demo.js"></script>
     <script src="startbootstrap-sb-admin-2-gh-pages/js/demo/chart-pie-demo.js"></script>
+    <script>
+        document.getElementById("demo").onmouseover = function() {mouseOver()};
+        document.getElementById("demo").onmouseout = function() {mouseOut()};
+        
+        function mouseOver() {
+          document.getElementById("demo").style.color = "white";
+        }
+        
+        function mouseOut() {
+          document.getElementById("demo").style.color = "black";
+        }
+        </script>
+
+
 
 </body>
 </html>

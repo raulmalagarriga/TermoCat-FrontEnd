@@ -2,6 +2,8 @@ function $(id) {
 	return document.getElementById(id);
 }
 
+let id_sucursal; 
+
 document.getElementById('direccion_sucursal').value = sessionStorage.getItem("");
 document.getElementById("horario_sucursal").value = sessionStorage.getItem("");
 
@@ -64,12 +66,31 @@ function getSucursales() {
 		td[1].innerHTML= data.direccion_sucursal;
 		td[2].innerHTML= data.horario_sucursal;
 		tr.id = id_sucursal;
+		tr.onclick(e, {
+			id_sucursal = e.currentTarget.id
 
+		})
+		tr.addEventListener("mouseover", mouseOver, false);
+		tr.addEventListener("mouseout", mouseOut, false);
 		tr.appendChild(td);
 		document.getElementById("sucursales").appendChild(tr);
+		
+		function mouseOver(){
+			tr.getElementById("id_sucursal").style.color = "white";	
+		}
+		function mouseOut(){
+			tr.getElementById("id_sucursal").style.color = "black";	
+		}
 	});
 }
 
-function deleteSucursales(){
+	function eliminarSucursal(id_sucursal) {
+		fetch( '/' + id_sucursal, {
+		  method: 'delete'
+		}).then(response =>
+		  response.json().then(json => {
+			return json;
+		  })
+		);
+	  }
 	
-}

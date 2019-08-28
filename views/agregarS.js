@@ -94,3 +94,39 @@ function getSucursales() {
 		);
 	  }
 	
+
+	document.getElementById('direccion_sucursal2').value = sessionStorage.getItem("");
+	document.getElementById("horario_sucursal2").value = sessionStorage.getItem("");
+
+	 function modificarSucursal(){
+		var data = {
+			id_sucursal,
+			direccion_sucursal: document.getElementById('direccion_sucursal2').value,
+			horario_sucursal: document.getElementById('horario_sucursal2').value,
+		};
+		console.log(data)
+		let config = {
+			method: 'PUT',
+			body: JSON.stringify(data),
+			headers:{
+				'Content-Type' : 'application/json'
+			}
+		};
+		fetch("", config)
+			.then(function (response) {
+				return response.json();
+			})
+			.then(function (data) {
+				console.log(data);
+				alert(data.message);
+				if (data.redirect != null && data.redirect != undefined) {
+					window.location.href = data.redirect;
+				}
+			});
+	 }
+
+	 function empty2() {
+		document.getElementById("start10").disabled = !document.getElementById("direccion_sucursal2").value.length;
+		document.getElementById("start10").disabled = !document.getElementById("horario_sucursal2").value.length;
+	}
+	 document.getElementById("start10").addEventListener("click", modificarSucursal); 

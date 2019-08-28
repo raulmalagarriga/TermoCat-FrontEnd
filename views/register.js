@@ -24,7 +24,7 @@ function createAccount(){
 			console.log(data);
 			alert(data.message);
 			if(data.redirect != null && data.redirect != undefined){
-            	window.location.href = data.redirect;
+            	window.location.href = 'login.html';
          	}
 		});
 	}

@@ -63,8 +63,13 @@ function getSucursales() {
 		td[0].innerHTML= data.id_sucursal;
 		td[1].innerHTML= data.direccion_sucursal;
 		td[2].innerHTML= data.horario_sucursal;
+		tr.id = id_sucursal;
 
 		tr.appendChild(td);
 		document.getElementById("sucursales").appendChild(tr);
 	});
+}
+
+function deleteSucursales(){
+	
 }

@@ -33,10 +33,10 @@ function AgregarSucursal() {
 			}
 		});
 }
-function empty() {
+/*function empty() {
 	document.getElementById("start3").disabled = !document.getElementById("direccion_sucursal").value.length;
 	document.getElementById("start3").disabled = !document.getElementById("horario_sucursal").value.length;
-}
+}*/
 
 document.getElementById("start3").addEventListener("click", AgregarSucursal);
 
@@ -52,12 +52,12 @@ getSucursales = () => {
 		})
 		.then(data => {
 			console.log(data);
-			getSucursales();
+			imprimirSucursales();
 		});
 
 }
 
-function getSucursales() {
+function imprimirSucursales() {
 	data.forEach(element => {
 		let tr = document.createElement('tr');
 		let td = [document.createElement('td'), document.createElement('td'), document.createElement('td')];
@@ -65,7 +65,7 @@ function getSucursales() {
 		td[0].innerHTML= data.id_sucursal;
 		td[1].innerHTML= data.direccion_sucursal;
 		td[2].innerHTML= data.horario_sucursal;
-		tr.id = id_sucursal;
+		tr.id = data.id_sucursal;
 		tr.onclick(e, {
 			id_sucursal = e.currentTarget.id
 
@@ -125,8 +125,8 @@ function getSucursales() {
 			});
 	 }
 
-	 function empty2() {
+	 /*function empty2() {
 		document.getElementById("start10").disabled = !document.getElementById("direccion_sucursal2").value.length;
 		document.getElementById("start10").disabled = !document.getElementById("horario_sucursal2").value.length;
-	}
+	}*/
 	 document.getElementById("start10").addEventListener("click", modificarSucursal); 

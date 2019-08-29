@@ -92,7 +92,7 @@ function eliminarProducto(id_product) {
 	);
   }
 
-  document.getElementById('id_sucursal').value = sessionStorage.getItem("");
+document.getElementById('id_sucursal').value = sessionStorage.getItem("");
 document.getElementById("descripcion_producto").value = sessionStorage.getItem("");
 document.getElementById('existencia_producto').value = sessionStorage.getItem("");
 document.getElementById("costo_producto").value = sessionStorage.getItem("");
@@ -125,3 +125,4 @@ function modificarProducto() {
 			}
 		});
 }
+document.getElementById("start100").addEventListener("click", modificarProducto);

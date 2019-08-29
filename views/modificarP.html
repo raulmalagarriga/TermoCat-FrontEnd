@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>TermoCat: Productos</title>
+    <title>TermoCat: Modificar Producto</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="icon" type="image/png" href="logo.png" sizes="16x16">
-    <link rel="icon" type="image/jpg" href="mapa.jpg" sizes="16x16">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../bootstrap-4.3.1-dist/css/bootstrap.min.css">
 
@@ -20,7 +19,7 @@
     <link href="startbootstrap-sb-admin-2-gh-pages/css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
-<body id="page-top" onload="getProductos()">
+<body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -75,8 +74,9 @@
                   <span>Productos</span>
                 </a>
               </li>
+
             <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
+            <hr class="sidebar-divider">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
@@ -94,23 +94,6 @@
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                    
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -118,7 +101,7 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span id="nombre_empresa" class="mr-2 d-none d-lg-inline text-gray-600 small">Nombre de Empresa</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Nombre de Empresa</span>
                             </a>
                         </li>
 
@@ -129,49 +112,43 @@
                         </button>                   
                     </ul>       
                 </nav>
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- TABLA PRODUCTOS -->
-                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                            <h6 class="m-0 font-weight-bold text-primary">PRODUCTOS</h6>
-                            <div class="dropdown no-arrow">
-                                <button id="start3" type="button" class="btn btn-primary" onclick="location='agregarP.html'">Agregar</button>
-                                <button type="button" class="btn btn-primary" onclick="location='modificarP.html'">Modificar</button>
-                                <button id="start66" type="button" class="btn btn-primary" onclick="eliminarProducto();">Elimnar</button>
+               
+                <div class="container" style="text-align: center;margin-top: 100px; width: 500px;">
+                    <h style="font-size: 40px; color: #37498d; font-family: Verdana, Geneva, Tahoma, sans-serif;">Modificar Producto</h>
+                    <br/>
+                    <br/>
+                    <div class="input-group flex-nowrap">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="addon-wrapping">#</span>
                             </div>
-                          </div>
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                      <thead>
-                        <tr>
-                          <th>Sucursal</th>
-                          <th>Producto</th>
-                          <th>Existencia</th>
-                          <th>Costo</th>
-                        </tr>
-                        <tbody id="productos">
-                            <tr>
-                              <td>3</td>
-                              <td>System Architect</td>
-                              <td>50</td>
-                              <td>689</td>
-                            </tr>
-                      </thead>
+                            <input id="id_sucursal2" type="text" class="form-control" placeholder="#Sucursal" aria-label="#Sucursal" aria-describedby="addon-wrapping" onInput="empty()">
+                    </div>
+                    <br/>
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="addon-wrapping">i</span>
+                        </div>
+                        <input id="descripcion_producto2" type="text" class="form-control" placeholder="Descripcion del producto" aria-label="Descripcion del producto" aria-describedby="addon-wrapping" onInput="empty()">
+                    </div>
+                    </br>
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="addon-wrapping">*</span>
+                        </div>
+                        <input id="existencia_producto2" type="text" class="form-control" placeholder="Existencia del producto" aria-label="Existencia del producto" aria-describedby="addon-wrapping" onInput="empty()">
+                    </div>
+                    </br>
+                    <div class="input-group flex-nowrap">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="addon-wrapping">$</span>
+                        </div>
+                        <input id="costo_producto2" type="text" class="form-control" placeholder="Costo del producto" aria-label="Costo del producto" aria-describedby="addon-wrapping" onInput="empty()">
+                    </div>
 
-                <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                    <!-- Copyright -->
-                    <!-- Copyright -->
-                </footer>
-                <!-- End of Footer -->
-            </div>
-        </div>        
-    </div>
-    <!-- End of Topbar -->   
-
+                
+                    <br/>
+                    <button id="start100" type="button" class="btn btn-outline-primary">Aceptar</button>
+                  </div>
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -185,15 +162,15 @@
                 <div class="modal-body">Selecciona "Logout" si estas listo para cerrar sesion</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="login.html" id="LogOut1">Logout</a>
                 </div>
             </div>
         </div>
     </div>
-
-    <script type="text/javascript" src="agregarP.js"></script>
+    
     <script type="text/javascript" src="editE.js"></script>
     <script type="text/javascript" src="logout.js"></script>
+    <script type="text/javascript" src="agregarP.js"></script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="startbootstrap-sb-admin-2-gh-pages/vendor/jquery/jquery.min.js"></script>
